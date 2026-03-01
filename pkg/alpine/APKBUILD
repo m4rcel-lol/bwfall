@@ -3,13 +3,13 @@ pkgname=bwfall
 pkgver=1.0.0
 pkgrel=0
 pkgdesc="Binary Waterfall CLI - Raw Data Media Player"
-url="https://github.com/yourname/bwfall"
+url="https://github.com/m4rcel-lol/bwfall"
 arch="all"
 license="GPL-3.0-or-later"
 depends=""
 makedepends="alsa-lib-dev ncurses-dev musl-dev gcc make"
 subpackages="$pkgname-doc"
-source="$pkgname-$pkgver.tar.gz::https://github.com/yourname/$pkgname/archive/refs/tags/v$pkgver.tar.gz"
+source="$pkgname-$pkgver.tar.gz::https://github.com/m4rcel-lol/$pkgname/archive/refs/tags/v$pkgver.tar.gz"
 builddir="$srcdir/$pkgname-$pkgver"
 
 build() {
