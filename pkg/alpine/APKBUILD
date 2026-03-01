@@ -1,0 +1,27 @@
+# Contributor: Your Name <you@example.com>
+pkgname=bwfall
+pkgver=1.0.0
+pkgrel=0
+pkgdesc="Binary Waterfall CLI - Raw Data Media Player"
+url="https://github.com/yourname/bwfall"
+arch="all"
+license="GPL-3.0-or-later"
+depends=""
+makedepends="alsa-lib-dev ncurses-dev musl-dev gcc make"
+subpackages="$pkgname-doc"
+source="$pkgname-$pkgver.tar.gz::https://github.com/yourname/$pkgname/archive/refs/tags/v$pkgver.tar.gz"
+builddir="$srcdir/$pkgname-$pkgver"
+
+build() {
+  make -C "$builddir" PREFIX=/usr CC=gcc CFLAGS="$CFLAGS"
+}
+
+check() {
+  make -C "$builddir" test || true
+}
+
+package() {
+  make -C "$builddir" DESTDIR="$pkgdir" PREFIX=/usr install
+}
+
+sha512sums="SKIP"

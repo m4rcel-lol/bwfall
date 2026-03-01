@@ -1,0 +1,124 @@
+.TH BWFALL 1 "2026-03-01" "bwfall 1.0.0" "User Commands"
+.SH NAME
+bwfall \- Binary Waterfall CLI - Raw Data Media Player
+.SH SYNOPSIS
+.B bwfall
+[\fIOPTIONS\fR] [\fIFILE\fR]
+.SH DESCRIPTION
+.B bwfall
+reads any binary file byte-by-byte and interprets the raw data as audio (PCM samples) and/or visual output (scrolling colored terminal display). No format parsing, no headers — just pure binary data transformed into an audio-visual experience.
+.SH OPTIONS
+.TP
+.BR \-i ", " \-\-input " " \fIFILE\fR
+Input file (or use stdin)
+.TP
+.BR \-\-no\-audio
+Disable audio output
+.TP
+.BR \-\-no\-visual
+Disable visual output
+.TP
+.BR \-s ", " \-\-speed " " \fIFLOAT\fR
+Playback speed multiplier (default: 1.0)
+.TP
+.BR \-l ", " \-\-loop
+Loop playback indefinitely
+.TP
+.BR \-p ", " \-\-pause
+Start in paused state
+.TP
+.BR \-\-start " " \fIBYTES\fR
+Start offset in bytes
+.TP
+.BR \-\-length " " \fIBYTES\fR
+Number of bytes to play
+.TP
+.BR \-\-audio\-mode " " \fIMODE\fR
+Audio mode: pcm|freq|fm|noise (default: pcm)
+.TP
+.BR \-\-sample\-rate " " \fIHZ\fR
+Sample rate in Hz (default: 44100)
+.TP
+.BR \-\-channels " " \fIN\fR
+Number of channels 1-2 (default: 1)
+.TP
+.BR \-\-volume " " \fI0-100\fR
+Output volume (default: 80)
+.TP
+.BR \-\-visual\-mode " " \fIMODE\fR
+Visual mode: waterfall|hex|binary|matrix|spectrum|waveform
+.TP
+.BR \-\-colormap " " \fIMAP\fR
+Color map: rainbow|heat|grayscale|binary
+.TP
+.BR \-\-fps " " \fIN\fR
+Target frames per second (default: 30)
+.TP
+.BR \-v ", " \-\-verbose
+Show verbose output
+.TP
+.BR \-\-stats
+Show live statistics overlay
+.TP
+.BR \-h ", " \-\-help
+Show help message
+.TP
+.BR \-\-version
+Show version information
+.SH EXAMPLES
+.TP
+Play a binary file:
+.B bwfall /bin/ls
+.TP
+Pipe random data:
+.B cat /dev/urandom | bwfall \-\-speed 0.5
+.TP
+Visual only (no audio):
+.B bwfall \-\-no\-audio \-\-visual\-mode matrix /usr/bin/python3
+.TP
+Audio only (no visual):
+.B bwfall \-\-no\-visual /boot/vmlinuz
+.SH INTERACTIVE CONTROLS
+.TP
+.B SPACE
+Pause/Resume
+.TP
+.BR q ", " ESC
+Quit
+.TP
+.BR → ", " l
+Seek forward
+.TP
+.BR ← ", " h
+Seek backward
+.TP
+.BR ↑ ", " k
+Increase speed
+.TP
+.BR ↓ ", " j
+Decrease speed
+.TP
+.B +
+Increase volume
+.TP
+.B \-
+Decrease volume
+.TP
+.B r
+Restart from beginning
+.TP
+.B m
+Toggle mute
+.TP
+.B v
+Cycle visual mode
+.TP
+.B c
+Cycle colormap
+.SH AUTHOR
+Your Name <you@example.com>
+.SH LICENSE
+GPL-3.0-or-later
+.SH SEE ALSO
+.BR aplay (1),
+.BR hexdump (1)
