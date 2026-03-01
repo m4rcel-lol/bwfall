@@ -29,4 +29,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Volume control
 - FPS limiting for visual output
 
-[1.0.0]: https://github.com/yourname/bwfall/releases/tag/v1.0.0
+[1.0.0]: https://github.com/m4rcel-lol/bwfall/releases/tag/v1.0.0
