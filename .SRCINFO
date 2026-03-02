@@ -13,7 +13,7 @@ pkgbase = bwfall
 	depends = ncurses
 	optdepends = libpulse: PulseAudio audio backend
 	optdepends = pipewire: PipeWire audio backend
-	source = bwfall-1.0.0.tar.gz::https://github.com/yourname/bwfall/archive/refs/tags/v1.0.0.tar.gz
+	source = bwfall-1.0.0.tar.gz::https://github.com/m4rcel-lol/bwfall/archive/refs/tags/v1.0.0.tar.gz
 	b2sums = SKIP
 
 pkgname = bwfall
